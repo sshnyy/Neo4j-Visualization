@@ -1,0 +1,30 @@
+{
+  "name": "social-login-authentication",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~4.16.3",
+    "ejs": "~2.6.1",
+    "passport": "0.4.0",
+    "passport-local": "~1.0.0",
+    "passport-twitter": "1.0.4",
+    "passport-google-oauth": "~0.1.5",
+    "connect-flash": "~0.1.1",
+    "bcrypt-nodejs": "latest",
+    "morgan": "~1.9.0",
+    "body-parser": "~1.18.3",
+    "cookie-parser": "~1.4.3",
+    "method-override": "~2.3.10",
+    "express-session": "~1.15.6",
+    "neo4j-driver": "~1.6.1",
+    "uuid-v4": "~0.1.0",
+    "lodash": "~4.17.10",
+    "mysql": "~2.15.0"
+  }
+}
