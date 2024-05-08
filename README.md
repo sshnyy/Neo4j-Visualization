@@ -52,12 +52,13 @@ mysql -u root
 mysql> FLUSH PRIVILEGES;
 mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'admin';
 ```
+
 ***3.5 데이터베이스 생성***
 ```sql
 mysql> CREATE DATABASE IF NOT EXISTS UserInfo;
 ```
   
-***3.4 테이블 생성  
+***3.4 테이블 생성***
 ```sql
 mysql> USE UserInfo
 mysql> CREATE TABLE IF NOT EXISTS Users (id INT AUTO_INCREMENT PRIMARY KEY, profileid VARCHAR(30), token VARCHAR(200), email VARCHAR(30), password VARCHAR(100));
