@@ -1,0 +1,84 @@
+<!-- ./views/profile.ejs -->
+<!-- This page can be replaced with query page or Neo4j visualization page -->
+
+<!doctype html>
+<html>
+
+<head>
+  <title>Neo4j visualization</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <style>
+    body {
+      padding-top: 80px;
+      word-wrap: break-word;
+    }
+
+    .grid {
+      display: grid;
+
+      /* define the number of grid columns */
+      grid-template-columns: repeat( auto-fit, minmax(250px, 1fr));
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid-container grid-container--fit">
+    <div class="page-header text-center">
+      <h1>
+        <span class="fa fa-address-card"></span> Profile Page</h1>
+      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+    <div class="row">
+      <!-- Local information -->
+      <div class="col-sm-6">
+        <div class="well">
+          <h3>
+            <span class="fa fa-user"></span> Local</h3>
+            <p>
+            <% if(user.profileid == null) { %>
+              <strong>id</strong>:
+              <%= user.id %>
+                <br>
+                <strong>email</strong>:
+                <%= user.email %>
+                  <br>
+                  <strong>password</strong>:
+                  <%= user.password %>
+            <% } %>
+            </p>
+        </div>
+      </div>
+      <!-- Google Information -->
+      <div class="col-sm-6">
+        <div class="well">
+          <h3 class="text-danger">
+            <span class="fa fa-google-plus"></span> Google</h3>
+            <p>
+            <% if(user.profileid != null) { %>
+              <strong>id</strong>:
+              <%= user.id %>
+                <br>
+                <strong>profile ID</strong>:
+                <%= user.profileid %>
+                  <br>
+                  <strong>token</strong>:
+                  <%= user.token %>
+                    <br>
+                    <strong>email</strong>:
+                    <%= user.email %>
+            <% } %>
+            </p>
+        </div>
+      </div>
+      <p align="center">Go to
+        <a href="/">Movie Search</a>.</p>
+    </div>
+  </div>
+  <footer class="container-fluid text-center">
+    <p>Copyright &copy 2003-2018 MOS. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>

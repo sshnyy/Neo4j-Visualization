@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Movie Recommandation</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */
+
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+
+    /* Remove the jumbotron's default bottom margin */
+
+    .jumbotron {
+      margin-bottom: 0;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+
+    .grid {
+      display: grid;
+
+      /* define the number of grid columns */
+      grid-template-columns: repeat( auto-fit, minmax(250px, 1fr));
+    }
+  </style>
+</head>
+<body>
+  <div class="jumbotron">
+    <div class="container text-center">
+      <h1>Movies</h1>
+      <p>Movie Recommandation Website</p>
+      <br>
+      <div class="col-lg-4">
+        <form method="post" action="/">
+          <input placeholder="Search Movie" type="text" id="txtMovie" name="searchMovie">
+          <input class="btn btn-success" type="submit" value="Submit">
+        </form>
+      </div>
+      <div class="col-lg-4">
+        <form method="post" action="/description/">
+          <input placeholder="Description" type="text" id="txtDescription" name="descriptionMovie">
+          <input class="btn btn-primary" type="submit" value="Submit">
+        </form>
+      </div>
+      <div class="col-lg-4">
+        <form method="post" action="/person/">
+          <input placeholder="Person Description" type="text" id="txtDescriptionPerson" name="searchPerson">
+          <input class="btn btn-danger" type="submit" id="submitbtn" value="Submit">
+        </form>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-inverse">
+    <div class="grid-container grid-container--fit">
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="/">
+              <span class="glyphicon glyphicon-"></span> Home</a>
+          </li>
+          <% if (!valid) { %>
+            <li>
+              <a href="/initChoose">
+                <span class="glyphicon glyphicon-"></span>Test</a>
+            </li>
+          <% } %>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if (valid) { %>
+            <li>
+              <a href="/user">
+                <span class="glyphicon glyphicon-user"></span> Profile </a>
+            </li>
+            <% } else { %>
+              <li>
+                <a href="/sociallogin">
+                  <span class="glyphicon glyphicon-user"></span> Log-in </a>
+              </li>
+              <% } %>
+                <li>
+                  <a href="/visualization">
+                    <span class="glyphicon glyphicon-align-left"></span> Graph</a>
+                </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="grid-container grid-container--fit">
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Participant List</div>
+          <div class="panel-body">
+            <table class="table table-hover">
+              <tr>
+                <%= movieTT %>
+                  <th>Name</th>
+                  <th>Job</th>
+                  <th>Role</th>
+                  <th>Born</th>
+              </tr>
+              <tr>
+                <% movieDescription.forEach(function(description){ %>
+                  <td onclick='clickFunction("<%= description.name %>")'>
+                    <%= description.name %>
+                  </td>
+                  <td>
+                    <%= description.job %>
+                  </td>
+                  <td>
+                    <%= description.role %>
+                  </td>
+                  <td>
+                    <%= description.born %>
+                  </td>
+              </tr>
+              <% }) %>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <footer class="container-fluid text-center">
+    <p>Copyright &copy 2003-2018 MOS. All rights reserved.</p>
+  </footer>
+  <script>
+    function clickFunction(x) {
+      document.getElementById("txtDescriptionPerson").value = x;
+      document.getElementById("submitbtn").click();
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!-- ./views/index.ejs -->
+<!doctype html>
+<html>
+<head>
+  <title>Neo4j visualization Login</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <!-- load bootstrap css -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <!-- load fontawesome -->
+  <style>
+    body {
+      padding-top: 80px;
+    }
+    .grid {
+      display: grid;
+      /* define the number of grid columns */
+      /* grid-template-columns: repeat( auto-fit, minmax(250px, 1fr)); */
+      grid-template-columns: 1fr 1fr 1fr
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container grid-container--fit">
+    <div class="jumbotron text-center">
+      <h1>
+        <span class="fa fa-magic"></span> Neo4j visualization Login</h1>
+      <br>
+      <p>Login with:</p>
+      <a href="/login" class="btn btn-default">
+        <span class="fa fa-user"></span> Local Login</a>
+      <a href="/auth/google" class="btn btn-danger">
+        <span class="fa fa-google-plus"></span> Google</a>
+      <br>
+      <br>
+      <p>or SignUp here</p>
+      <a href="/signup" class="btn btn-default">
+        <span class="fa fa-user"></span> Local Signup</a>
+    </div>
+  </div>
+  <footer class="container-fluid text-center">
+    <p>Copyright &copy 2003-2018 MOS. All rights reserved.</p>
+  </footer>
+</body>
+</html>
