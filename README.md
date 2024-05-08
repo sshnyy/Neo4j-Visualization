@@ -1,6 +1,5 @@
 # Neo4j 시각화
 
-## Quick Start
 ### 1. 기본 설정
 * 데모를 실행하려면 다음 프로그램 목록이 필요합니다.
     * Neo4j (Server or Desktop)
