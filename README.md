@@ -1,7 +1,7 @@
 # Neo4j 시각화
 
 ### 1. 기본 설정
-* 데모를 실행하려면 다음 프로그램 목록이 필요합니다.
+* 데모 실행 환경
     * Neo4j (Server or Desktop)
     * Node.js
     * MariaDB
@@ -9,7 +9,7 @@
 ### 2. Neo4j
 * Neo4j ([Download & Install](http://neo4j.com/download))를 로컬에서 시작 하고, [Neo4j Browser](http://localhost:7474)를 엽니다.
 * 기본 ID는 'neo4j'이며 비밀번호는 'admin'으로 설정해야 합니다.
-* `:play movies`를 사용하여 영화 데이터세트를 다운로드하고, 'CREATE'를 클릭한 다음 삼각형의 'Run' 버튼을 누르세요.
+* `:play movies`를 사용하여 movies 데이터셋을 다운로드하고, 'CREATE'를 클릭한 다음 'Run' 버튼을 누르세요.
 
 ### 3. MariaDB
 
