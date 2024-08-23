@@ -74,6 +74,3 @@ $ npm install
 ```
 $ npm start
 ```
-
-
-Copyright © 2018 MOSSupport, Inc.
